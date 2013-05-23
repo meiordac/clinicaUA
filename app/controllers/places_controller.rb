@@ -2,7 +2,15 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
+
+    @places = Place.find(params[:piso])
+    @places << Place.find(params[:edificio])
+    @places << Place.find(params[:area])
+    @places << Place.find(params[:unidad])
+
+    if @places == nil
     @places = Place.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

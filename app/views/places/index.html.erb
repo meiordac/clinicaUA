@@ -13,6 +13,26 @@
     <th></th>
   </tr>
 
+<%= form_tag("/places", :method => "get") do %>
+
+  <%= label_tag(:piso, "Piso:") %>
+  <%= text_field_tag(:piso) %>
+
+    <%= label_tag(:edificio, "Edificio:") %>
+  <%= text_field_tag(:edificio) %>
+
+    <%= label_tag(:area, "Area:") %>
+  <%= text_field_tag(:area) %>
+
+    <%= label_tag(:unidad, "Unidad:") %>
+  <%= text_field_tag(:unidad) %>
+
+<br/>
+  <%= submit_tag("Filtrar") %>
+<% end %>
+
+
+<br/>
 <% @places.each do |place| %>
   <tr>
     <td><%= place.typecleaning %></td>
