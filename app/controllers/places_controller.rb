@@ -5,25 +5,27 @@ class PlacesController < ApplicationController
 
     @places = Place.all
 
-    if params[:piso] == nil and params[:edificio] == nil and params[:area] == nil and params[:unidad] == nil
-    @filter = Place.all
-    
-    else
+      @filter= Array.new
 
       @places.each do |p|
+
 
         if p.floor==params[:piso]
           @filter<<p
         elsif p.area==params[:area]
           @filter<<p
-        elsif p.building==params[:building]
+        elsif p.building==params[:edificio]
           @filter<<p
-        elsif p.unit==params[:unit]
+        elsif p.unit==params[:unidad]
           @filter<<p
-
-          end  
+        end
       end
-  end
+
+      if @filter.count==0
+        @filter=@places
+
+      end
+
 
     respond_to do |format|
       format.html # index.html.erb
