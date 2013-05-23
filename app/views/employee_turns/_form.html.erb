@@ -1,0 +1,12 @@
+<%= simple_form_for(@employee_turn) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :employee_id %>
+    <%= f.input :turn_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

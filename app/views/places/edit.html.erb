@@ -1,6 +1,17 @@
-<h1>Editing place</h1>
+<h1>Editar lugares</h1>
 
-<%= render 'form' %>
+<%= simple_form_for(@place) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Show', @place %> |
 <%= link_to 'Back', places_path %>

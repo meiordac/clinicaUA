@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Employee:</b>
+  <%= @employee_turn.employee_id %>
+</p>
+
+<p>
+  <b>Turn:</b>
+  <%= @employee_turn.turn_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_turn_path(@employee_turn) %> |
+<%= link_to 'Back', employee_turns_path %>

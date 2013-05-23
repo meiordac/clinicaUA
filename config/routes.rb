@@ -1,4 +1,7 @@
 ClinicaUA::Application.routes.draw do
+  resources :employee_turns
+
+
   resources :places
 
 

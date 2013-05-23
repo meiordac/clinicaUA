@@ -1,13 +1,13 @@
-<h1>Listing places</h1>
+<h1>Lugares</h1>
 
 <table>
   <tr>
-    <th>Typecleaning</th>
+    <th>Tipo de limpieza</th>
     <th>Area</th>
     <th>Status</th>
-    <th>Unit</th>
-    <th>Building</th>
-    <th>Floor</th>
+    <th>Unidad</th>
+    <th>Edificio</th>
+    <th>Piso</th>
     <th></th>
     <th></th>
     <th></th>
@@ -31,7 +31,7 @@
   <%= submit_tag("Filtrar") %>
 <% end %>
 
-
+<br/>
 <br/>
 <% @filter.each do |place| %>
   <tr>
@@ -43,11 +43,11 @@
     <td><%= place.floor %></td>
     <td><%= link_to 'Show', place %></td>
     <td><%= link_to 'Edit', edit_place_path(place) %></td>
-    <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Seguro?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Place', new_place_path %>
+<%= link_to 'Nuevo Espacio', new_place_path %>

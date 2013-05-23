@@ -25,6 +25,9 @@ class TurnsController < ApplicationController
   # GET /turns/new.json
   def new
     @turn = Turn.new
+    @employees=Employee.all
+
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +44,8 @@ class TurnsController < ApplicationController
   # POST /turns.json
   def create
     @turn = Turn.new(params[:turn])
+
+    @turn.employees=Employee.find(params[:user_ids] )
 
     respond_to do |format|
       if @turn.save
