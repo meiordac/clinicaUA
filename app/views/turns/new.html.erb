@@ -1,11 +1,25 @@
 <h1>Nuevo turno</h1>
 
-<%= render 'form' %>
+<%= simple_form_for(@turn) do |f| %>
+  <%= f.error_notification %>
 
-<% @employees.each do |user| %>
+  <div class="form-inputs">
+    <%= f.input :validshift %>
+    <%= f.input :shifhtstartime %>
+    <%= f.input :shiftendtime %>
+
+    Empleados que trabajan en turno: <br/>
+
+    <% @employees.each do |user| %>
          <%= check_box_tag "user_ids[]", user.id %> 
          <%= "#{user.FirstName} " -%> <%= "#{user.LastName}" -%><br />
-      
 <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Back', turns_path %>
