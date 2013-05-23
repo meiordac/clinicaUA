@@ -4,6 +4,19 @@
     <li>
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
     </li>
+
+     <li>
+     <%= link_to 'Lugares', places_path %>
+    </li>
+
+    <li>
+     <%= link_to 'Empleados', employees_path %>
+    </li>
+
+    <li>
+     <%= link_to 'Turnos', turns_path %>
+    </li>
+
   <% else %>
     <li>
     <%= link_to 'Login', new_user_session_path %>
