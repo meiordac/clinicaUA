@@ -46,6 +46,7 @@ class TurnsController < ApplicationController
     @turn = Turn.new(params[:turn])
 
     @turn.employees=Employee.find(params[:user_ids] )
+    @turn.save
 
     respond_to do |format|
       if @turn.save
