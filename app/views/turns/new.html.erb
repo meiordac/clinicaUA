@@ -4,7 +4,7 @@
 
 <% @employees.each do |user| %>
          <%= check_box_tag "user_ids[]", user.id %> 
-         <%= "#{user.name}" -%><br />
+         <%= "#{user.FirstName} " -%> <%= "#{user.LastName}" -%><br />
       
 <% end %>
 
