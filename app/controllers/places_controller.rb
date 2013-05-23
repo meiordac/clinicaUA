@@ -3,14 +3,27 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
 
-    @places = Place.find(params[:piso])
-    @places << Place.find(params[:edificio])
-    @places << Place.find(params[:area])
-    @places << Place.find(params[:unidad])
-
-    if @places == nil
     @places = Place.all
-    end
+
+    if params[:piso] == nil and params[:edificio] == nil and params[:area] == nil and params[:unidad] == nil
+    @filter = Place.all
+    
+    else
+
+      @places.each do |p|
+
+        if p.floor==params[:piso]
+          @filter<<p
+        elsif p.area==params[:area]
+          @filter<<p
+        elsif p.building==params[:building]
+          @filter<<p
+        elsif p.unit==params[:unit]
+          @filter<<p
+
+          end  
+      end
+  end
 
     respond_to do |format|
       format.html # index.html.erb
