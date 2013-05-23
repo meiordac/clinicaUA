@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523033817) do
+ActiveRecord::Schema.define(:version => 20130523050326) do
 
   create_table "employee_turns", :force => true do |t|
     t.integer  "employee_id"
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(:version => 20130523033817) do
 
   create_table "turns", :force => true do |t|
     t.boolean  "validshift"
-    t.date     "shifhtstartime"
-    t.date     "shiftendtime"
+    t.datetime "shifhtstartime"
+    t.datetime "shiftendtime"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
