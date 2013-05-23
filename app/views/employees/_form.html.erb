@@ -1,0 +1,28 @@
+<%= simple_form_for(@employee) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :FirstName %>
+    <%= f.input :LastName %>
+    <%= f.input :Adress %>
+    <%= f.input :Phone %>
+    <%= f.input :Function %>
+    <%= f.input :MaritalStatus %>
+    <%= f.input :Academicformation %>
+    <%= f.input :intNumberOfChildren %>
+    <%= f.input :Religion %>
+    <%= f.input :SpouseName %>
+    <%= f.input :OccupationSpouse %>
+    <%= f.input :AssistancetoTraining %>
+    <%= f.input :HireDate %>
+    <%= f.input :SettlementDate %>
+    <%= f.input :DeliveryInUniformDate %>
+    <%= f.input :ProtectiveEquipmentDeliveryDate %>
+    <%= f.input :Permissions %>
+    <%= f.input :DateTimeHolidays %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

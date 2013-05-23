@@ -11,7 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523005115) do
+ActiveRecord::Schema.define(:version => 20130523010015) do
+
+  create_table "employees", :force => true do |t|
+    t.string   "FirstName"
+    t.string   "LastName"
+    t.string   "Adress"
+    t.string   "Phone"
+    t.string   "Function"
+    t.string   "MaritalStatus"
+    t.string   "Academicformation"
+    t.string   "intNumberOfChildren"
+    t.string   "Religion"
+    t.string   "SpouseName"
+    t.string   "OccupationSpouse"
+    t.string   "AssistancetoTraining"
+    t.date     "HireDate"
+    t.date     "SettlementDate"
+    t.date     "DeliveryInUniformDate"
+    t.date     "ProtectiveEquipmentDeliveryDate"
+    t.string   "Permissions"
+    t.string   "DateTimeHolidays"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -23,6 +46,14 @@ ActiveRecord::Schema.define(:version => 20130523005115) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "turns", :force => true do |t|
+    t.boolean  "validshift"
+    t.date     "shifhtstartime"
+    t.date     "shiftendtime"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

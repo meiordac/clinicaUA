@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Validshift:</b>
+  <%= @turn.validshift %>
+</p>
+
+<p>
+  <b>Shifhtstartime:</b>
+  <%= @turn.shifhtstartime %>
+</p>
+
+<p>
+  <b>Shiftendtime:</b>
+  <%= @turn.shiftendtime %>
+</p>
+
+
+<%= link_to 'Edit', edit_turn_path(@turn) %> |
+<%= link_to 'Back', turns_path %>

@@ -1,4 +1,13 @@
 ClinicaUA::Application.routes.draw do
+  resources :places
+
+
+  resources :turns
+
+
+  resources :employees
+
+
   authenticated :user do
     root :to => 'home#index'
   end

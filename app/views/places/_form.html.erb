@@ -1,0 +1,16 @@
+<%= simple_form_for(@place) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :typecleaning %>
+    <%= f.input :area %>
+    <%= f.input :status %>
+    <%= f.input :unit %>
+    <%= f.input :building %>
+    <%= f.input :floor %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

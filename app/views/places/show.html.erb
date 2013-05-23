@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Typecleaning:</b>
+  <%= @place.typecleaning %>
+</p>
+
+<p>
+  <b>Area:</b>
+  <%= @place.area %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @place.status %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%= @place.unit %>
+</p>
+
+<p>
+  <b>Building:</b>
+  <%= @place.building %>
+</p>
+
+<p>
+  <b>Floor:</b>
+  <%= @place.floor %>
+</p>
+
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>
