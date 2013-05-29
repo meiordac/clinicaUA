@@ -1,0 +1,29 @@
+<h1>Listing inventories</h1>
+
+<table>
+  <tr>
+    <th>Reutilizable?</th>
+    <th>Costo</th>
+    <th>Cantidad</th>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inventories.each do |inventory| %>
+  <tr>
+    <td><%= inventory.reutilizable %></td>
+    <td><%= inventory.cost %></td>
+    <td><%= inventory.quantity %></td>
+    <td><%= inventory.name %></td>
+    <td><%= link_to 'Show', inventory %></td>
+    <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+    <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Seguro?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo inventario', new_inventory_path %>

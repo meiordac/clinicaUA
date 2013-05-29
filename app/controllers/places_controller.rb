@@ -9,7 +9,6 @@ class PlacesController < ApplicationController
 
       @places.each do |p|
 
-
         if p.floor==params[:piso]
           @filter<<p
         elsif p.area==params[:area]

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Reutilizable:</b>
+  <%= @inventory.reutilizable %>
+</p>
+
+<p>
+  <b>Costo:</b>
+  <%= @inventory.cost %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%= @inventory.quantity %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @inventory.name %>
+</p>
+
+
+<%= link_to 'Editar', edit_inventory_path(@inventory) %> |
+<%= link_to 'Atras', inventories_path %>

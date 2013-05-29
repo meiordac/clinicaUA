@@ -15,13 +15,13 @@
     <td><%= turn.validshift %></td>
     <td><%= turn.shifhtstartime %></td>
     <td><%= turn.shiftendtime %></td>
-    <td><%= link_to 'Show', turn %></td>
-    <td><%= link_to 'Edit', edit_turn_path(turn) %></td>
-    <td><%= link_to 'Destroy', turn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Mostrar', turn %></td>
+    <td><%= link_to 'Editar', edit_turn_path(turn) %></td>
+    <td><%= link_to 'Destruir', turn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Turn', new_turn_path %>
+<%= link_to 'Nuevo turno', new_turn_path %>
