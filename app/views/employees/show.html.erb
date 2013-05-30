@@ -1,95 +1,55 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Employee -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Nombres:</b>
-  <%= @employee.FirstName %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:FirstName) %>:</strong></dt>
+  <dd><%= @employee.FirstName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:LastName) %>:</strong></dt>
+  <dd><%= @employee.LastName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Adress) %>:</strong></dt>
+  <dd><%= @employee.Adress %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Phone) %>:</strong></dt>
+  <dd><%= @employee.Phone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Function) %>:</strong></dt>
+  <dd><%= @employee.Function %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:MaritalStatus) %>:</strong></dt>
+  <dd><%= @employee.MaritalStatus %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Academicformation) %>:</strong></dt>
+  <dd><%= @employee.Academicformation %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:intNumberOfChildren) %>:</strong></dt>
+  <dd><%= @employee.intNumberOfChildren %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Religion) %>:</strong></dt>
+  <dd><%= @employee.Religion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SpouseName) %>:</strong></dt>
+  <dd><%= @employee.SpouseName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:OccupationSpouse) %>:</strong></dt>
+  <dd><%= @employee.OccupationSpouse %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:AssistancetoTraining) %>:</strong></dt>
+  <dd><%= @employee.AssistancetoTraining %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:HireDate) %>:</strong></dt>
+  <dd><%= @employee.HireDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SettlementDate) %>:</strong></dt>
+  <dd><%= @employee.SettlementDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:DeliveryInUniformDate) %>:</strong></dt>
+  <dd><%= @employee.DeliveryInUniformDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ProtectiveEquipmentDeliveryDate) %>:</strong></dt>
+  <dd><%= @employee.ProtectiveEquipmentDeliveryDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Permissions) %>:</strong></dt>
+  <dd><%= @employee.Permissions %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:DateTimeHolidays) %>:</strong></dt>
+  <dd><%= @employee.DateTimeHolidays %></dd>
+</dl>
 
-<p>
-  <b>Apellidos:</b>
-  <%= @employee.LastName %>
-</p>
-
-<p>
-  <b>Direccion:</b>
-  <%= @employee.Adress %>
-</p>
-
-<p>
-  <b>Telefono:</b>
-  <%= @employee.Phone %>
-</p>
-
-<p>
-  <b>Cargo:</b>
-  <%= @employee.Function %>
-</p>
-
-<p>
-  <b>Estado matrimonial:</b>
-  <%= @employee.MaritalStatus %>
-</p>
-
-<p>
-  <b>Formacion academica:</b>
-  <%= @employee.Academicformation %>
-</p>
-
-<p>
-  <b>Numero de hijos:</b>
-  <%= @employee.intNumberOfChildren %>
-</p>
-
-<p>
-  <b>Religion:</b>
-  <%= @employee.Religion %>
-</p>
-
-<p>
-  <b>Nombre esposa:</b>
-  <%= @employee.SpouseName %>
-</p>
-
-<p>
-  <b>Ocupacion esposa:</b>
-  <%= @employee.OccupationSpouse %>
-</p>
-
-<p>
-  <b>Asistencia a entrenamiento:</b>
-  <%= @employee.AssistancetoTraining %>
-</p>
-
-<p>
-  <b>Fecha contratacion:</b>
-  <%= @employee.HireDate %>
-</p>
-
-<p>
-  <b>Settlementdate:</b>
-  <%= @employee.SettlementDate %>
-</p>
-
-<p>
-  <b>Envio uniforme:</b>
-  <%= @employee.DeliveryInUniformDate %>
-</p>
-
-<p>
-  <b>Entrega de uniforme:</b>
-  <%= @employee.ProtectiveEquipmentDeliveryDate %>
-</p>
-
-<p>
-  <b>Permissions:</b>
-  <%= @employee.Permissions %>
-</p>
-
-<p>
-  <b>Vacaciones:</b>
-  <%= @employee.DateTimeHolidays %>
-</p>
-
-
-<%= link_to 'Editar', edit_employee_path(@employee) %> |
-<%= link_to 'Atras', employees_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              employees_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_employee_path(@employee), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              employee_path(@employee),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,53 +1,46 @@
-<h1>Lugares</h1>
-
-<table>
-  <tr>
-    <th>Tipo de limpieza</th>
-    <th>Area</th>
-    <th>Status</th>
-    <th>Unidad</th>
-    <th>Edificio</th>
-    <th>Piso</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<%= form_tag("/places", :method => "get") do %>
-
-  <%= label_tag(:piso, "Piso:") %>
-  <%= text_field_tag(:piso) %>
-
-    <%= label_tag(:edificio, "Edificio:") %>
-  <%= text_field_tag(:edificio) %>
-
-    <%= label_tag(:area, "Area:") %>
-  <%= text_field_tag(:area) %>
-
-    <%= label_tag(:unidad, "Unidad:") %>
-  <%= text_field_tag(:unidad) %>
-
-<br/>
-  <%= submit_tag("Filtrar") %>
-<% end %>
-
-<br/>
-<br/>
-<% @filter.each do |place| %>
-  <tr>
-    <td><%= place.typecleaning %></td>
-    <td><%= place.area %></td>
-    <td><%= place.status %></td>
-    <td><%= place.unit %></td>
-    <td><%= place.building %></td>
-    <td><%= place.floor %></td>
-    <td><%= link_to 'Show', place %></td>
-    <td><%= link_to 'Edit', edit_place_path(place) %></td>
-    <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Seguro?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Place -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:typecleaning) %></th>
+      <th><%= model_class.human_attribute_name(:area) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%= model_class.human_attribute_name(:unit) %></th>
+      <th><%= model_class.human_attribute_name(:building) %></th>
+      <th><%= model_class.human_attribute_name(:floor) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @places.each do |place| %>
+      <tr>
+        <td><%= link_to place.id, place_path(place) %></td>
+        <td><%= place.typecleaning %></td>
+        <td><%= place.area %></td>
+        <td><%= place.status %></td>
+        <td><%= place.unit %></td>
+        <td><%= place.building %></td>
+        <td><%= place.floor %></td>
+        <td><%=l place.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_place_path(place), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      place_path(place),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'Nuevo Espacio', new_place_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_place_path,
+            :class => 'btn btn-primary' %>

@@ -1,13 +1,18 @@
-<%= simple_form_for(@turn) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @turn, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :validshift %>
+  <%= f.input :shifhtstartime %>
+  <%= f.input :shiftendtime %>
 
-  <div class="form-inputs">
-    <%= f.input :validshift %>
-    <%= f.input :shifhtstartime %>
-    <%= f.input :shiftendtime %>
-  </div>
+ 		Empleados que trabajan en turno: <br/>
+
+    	<% @employees.each do |user| %>
+         <%= check_box_tag "user_ids[]", user.id %> 
+         <%= "#{user.FirstName} " -%> <%= "#{user.LastName}" -%><br />
+<% end %>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                turns_path, :class => 'btn' %>
   </div>
 <% end %>

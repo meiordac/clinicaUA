@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529201444) do
+ActiveRecord::Schema.define(:version => 20130530002533) do
 
   create_table "employee_turns", :force => true do |t|
     t.integer  "employee_id"
@@ -45,9 +45,13 @@ ActiveRecord::Schema.define(:version => 20130529201444) do
 
   create_table "inventories", :force => true do |t|
     t.boolean  "reutilizable"
-    t.float    "cost"
+    t.float    "finalcost"
     t.integer  "quantity"
     t.string   "name"
+    t.string   "image"
+    t.string   "codeproduct"
+    t.float    "netvalue"
+    t.float    "descto"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
