@@ -5,7 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><% model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:typecleaning) %></th>
       <th><%= model_class.human_attribute_name(:area) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
@@ -19,7 +19,7 @@
   <tbody>
     <% @places.each do |place| %>
       <tr>
-        <td><%= link_to place.id, place_path(place) %></td>
+        <td><% link_to place.id, place_path(place) %></td>
         <td><%= place.typecleaning %></td>
         <td><%= place.area %></td>
         <td><%= place.status %></td>
