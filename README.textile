@@ -1,22 +1,56 @@
 h1. Clinicaua
 
-This application was generated with the "rails_apps_composer":https://github.com/RailsApps/rails_apps_composer gem provided by the "RailsApps Project":http://railsapps.github.io/.
+The project seeks to give visibility to the service of cleaning the admissions, occupation, movement Clinic in general, to manage an efficient cleaning and deliver a service quick and synchronized. Which, it is necessary to have the support that may be provided by information technology, to facilitate organizing and processing the information that is generated during the day, weeks, months.
+ 
+Objectives of the project:
+ 
+-Optimize the management of spare part: adapt to the estimated time and the quality of
+ delivered in the different spaces (halls, maternity, rooms, consultations,
+ offices).
 
-h2. Diagnostics
+-Support the coordination between the different actors in the process to obtain a
+ continuous feedback on the status of the service: admission, nursing, emergency
+ Pavilions, professional.
 
-This application was built with recipes that are known to work together.
+-Kept constantly clean and point all the spaces, do it with a careful
+ care and treatment, both to the patient and the clinic staff.
+ Project profile - IIC2143 Software Engineering page 2
+ 
+-Keep track of costs related to cleaning: supplies, instruments.
 
-This application was built with preferences that are NOT known to work together.
+-Optimize the Organization and rotation of the cleaning staff.
 
-If the application doesn't work as expected, please "report an issue":https://github.com/RailsApps/rails_apps_composer/issues and include these diagnostics:
+-Coordinate with operations management aspects listed in the replacement
+ the team of maintenance (equipment, arrangements),
+ 
+-Coordinate with Winery the replenishment of inputs
 
-We'd also like to know if you've found combinations of recipes or preferences that do work together.
+The actors that should be included are the following:
 
-Recipes:
-["controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "saas", "setup", "testing", "views"]
+-Admission: general occupation in hospitalization and pavilions
 
-Preferences:
-{:git=>true, :railsapps=>"rails3-bootstrap-devise-cancan", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"gmail", :authentication=>"devise", :devise_modules=>"default", :authorization=>"cancan", :starter_app=>"admin_app", :form_builder=>"simple_form", :quiet_assets=>true, :local_env_file=>true, :better_errors=>true, :dev_webserver=>"webrick", :templates=>"erb", :continuous_testing=>"none", :rvmrc=>false, :jsruntime=>false, :github=>true}
+-Consultations: consultations general occupation (schedules and replacement of professionals in the)
+ box)
+
+-Hospitalisation (floor Coordinator nurse): schedules, mobilization of patients
+ hospitalized. High. Peculiarities of patients (special care according to)
+ treatment or infection).
+ 
+-Pavilions (nurse coordinator): schedules, flow and special requirements of cleaning, according to pathology.
+
+-Maternity (nurse coordinator): schedules, flow.
+ 
+-Emergency (nurse coordinator): schedules, mobilization of patients, flow.
+ 
+-Laboratories: timetables, flow.
+ 
+-Housekeeping: communication for review of common spaces that need it.
+ 
+-Cleaning service: Manual cleaning process to be applied according to enclosure, standards and
+ risks. The staff of toilet training. Planning times and frequencies. The
+ Cleaning of the clinic will be in charge of the toilet.
+ 
+-Supply: inputs required for cleaning
 
 h2. Ruby on Rails
 
@@ -44,21 +78,9 @@ h2. Email
 
 The application is configured to send email using a Gmail account.
 
-h2. Getting Started
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
 h2. Documentation and Support
 
-This is the only documentation.
-
-h4. Issues
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-h2. Similar Projects
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Documentation in spanish.
 
 h2. Contributing
 
@@ -71,10 +93,3 @@ If you make improvements to this application, please share with others.
 
 If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
 
-h2. Credits
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-h2. License
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
